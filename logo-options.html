@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>RuntimeAI — Logo Options</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#070710;
+  --surface:#0e0e1c;
+  --surface-2:#141427;
+  --border:rgba(255,255,255,.07);
+  --primary:#63b3ed;
+  --accent:#a78bfa;
+  --cyan:#22d3ee;
+  --text:#f0f0ff;
+  --text-2:#a0a0c0;
+  --text-3:#50506a;
+  --green:#34d399;
+}
+html,body{height:100%}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  background:var(--bg);color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  display:flex;flex-direction:column;align-items:center;
+  justify-content:center;min-height:100vh;padding:40px 24px;
+  background-image:
+    radial-gradient(ellipse 70% 50% at 50% 0%,rgba(99,179,237,.06),transparent 60%),
+    linear-gradient(rgba(99,179,237,.018) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(99,179,237,.018) 1px,transparent 1px);
+  background-size:100% 100%, 60px 60px, 60px 60px;
+}
+
+/* ── Page header ─────────────────────── */
+.page-title{
+  font-size:1rem;font-weight:600;text-transform:uppercase;letter-spacing:.2em;
+  color:var(--text-3);margin-bottom:8px;text-align:center;
+}
+.page-sub{
+  font-size:.875rem;color:var(--text-2);margin-bottom:48px;text-align:center;
+}
+
+/* ── Logo cards ──────────────────────── */
+.options{display:flex;flex-direction:column;gap:20px;width:100%;max-width:700px}
+@media(min-width:700px){.options{flex-direction:row;gap:20px}}
+
+.logo-card{
+  flex:1;
+  border:1px solid var(--border);
+  border-radius:18px;
+  background:var(--surface);
+  padding:32px 28px;
+  cursor:pointer;
+  transition:all .3s cubic-bezier(.22,1,.36,1);
+  position:relative;
+  overflow:hidden;
+  user-select:none;
+  -webkit-user-select:none;
+}
+/* ambient glow overlay (hidden by default) */
+.logo-card::before{
+  content:'';
+  position:absolute;inset:0;border-radius:18px;
+  opacity:0;transition:opacity .3s;
+  pointer-events:none;
+}
+.logo-card.opt-1::before{background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(34,211,238,.07),transparent)}
+.logo-card.opt-2::before{background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(99,179,237,.08),transparent)}
+.logo-card.opt-3::before{background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(167,139,250,.08),transparent)}
+
+.logo-card:hover{
+  border-color:rgba(99,179,237,.25);
+  transform:translateY(-4px);
+  box-shadow:0 20px 60px rgba(0,0,0,.3), 0 0 0 1px rgba(99,179,237,.1);
+}
+.logo-card:hover::before{opacity:1}
+
+.logo-card.selected{
+  border-color:rgba(99,179,237,.45);
+  box-shadow:0 20px 60px rgba(0,0,0,.3), 0 0 0 1px rgba(99,179,237,.2), 0 0 40px rgba(99,179,237,.08);
+}
+.logo-card.selected::before{opacity:1}
+
+/* ── Option label ────────────────────── */
+.opt-label{
+  font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.18em;
+  color:var(--text-3);margin-bottom:22px;display:flex;align-items:center;justify-content:space-between;
+}
+.selected-pill{
+  display:none;align-items:center;gap:4px;
+  font-size:.65rem;font-weight:600;letter-spacing:.1em;
+  color:var(--green);background:rgba(52,211,153,.1);
+  border:1px solid rgba(52,211,153,.2);border-radius:999px;
+  padding:2px 8px;
+}
+.logo-card.selected .selected-pill{display:flex}
+
+/* ── Logo display ────────────────────── */
+.logo-display{
+  display:flex;align-items:center;gap:12px;
+  padding:18px 0 22px;
+}
+
+/* RuntimeAI wordmark — same font/treatment as site */
+.wordmark{
+  font-family:'Inter',sans-serif;
+  font-weight:800;
+  font-size:1.5rem;
+  letter-spacing:-.03em;
+  line-height:1;
+  white-space:nowrap;
+}
+.wordmark .rt{color:var(--text)}
+.wordmark .ai{color:var(--primary)}
+
+/* Hover: animate the wordmark colors */
+.logo-card.opt-1:hover .wordmark .ai,
+.logo-card.opt-1.selected .wordmark .ai{color:var(--cyan)}
+.logo-card.opt-3:hover .wordmark .ai,
+.logo-card.opt-3.selected .wordmark .ai{color:var(--accent)}
+
+/* ── Concept description ─────────────── */
+.opt-name{font-size:.875rem;font-weight:700;color:var(--text);margin-bottom:4px}
+.opt-desc{font-size:.78rem;color:var(--text-2);line-height:1.55}
+
+/* ── Bottom action ───────────────────── */
+.bottom{margin-top:36px;text-align:center}
+.btn-select{
+  display:inline-flex;align-items:center;gap:8px;padding:12px 28px;
+  background:var(--primary);color:#05050e;font-weight:700;font-size:.875rem;
+  border-radius:10px;border:none;cursor:pointer;transition:all .25s;font-family:'Inter',sans-serif;
+  box-shadow:0 0 20px rgba(99,179,237,.25);
+  opacity:.4;pointer-events:none;
+}
+.btn-select.active{opacity:1;pointer-events:auto}
+.btn-select.active:hover{background:#7ec8f5;transform:translateY(-1px)}
+.bottom-hint{margin-top:12px;font-size:.78rem;color:var(--text-3)}
+
+/* ── Confirm banner ──────────────────── */
+.confirm-banner{
+  display:none;margin-top:20px;padding:14px 24px;
+  border-radius:12px;background:rgba(52,211,153,.08);
+  border:1px solid rgba(52,211,153,.2);color:var(--green);
+  font-size:.875rem;text-align:center;max-width:700px;width:100%;
+}
+.confirm-banner.show{display:block}
+</style>
+</head>
+<body>
+
+<div class="page-title">RuntimeAI · Logo Options</div>
+<div class="page-sub">Hover to preview · Click to select · All use Inter (site font)</div>
+
+<div class="options">
+
+  <!-- ── OPTION 1: Network R ── -->
+  <div class="logo-card opt-1" onclick="select(1)" id="card-1">
+    <div class="opt-label">
+      Option 01
+      <span class="selected-pill">✓ Selected</span>
+    </div>
+
+    <div class="logo-display">
+      <!-- SVG Icon 1: Geometric R built from network nodes + edges -->
+      <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="g1" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#22d3ee"/>
+            <stop offset="100%" stop-color="#63b3ed"/>
+          </linearGradient>
+          <filter id="glow1">
+            <feGaussianBlur stdDeviation="1.5" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <!-- R edges -->
+        <line x1="11" y1="7"  x2="11" y2="37" stroke="url(#g1)" stroke-width="1.7" stroke-linecap="round"/>
+        <line x1="11" y1="7"  x2="28" y2="7"  stroke="url(#g1)" stroke-width="1.7" stroke-linecap="round"/>
+        <line x1="28" y1="7"  x2="30" y2="21" stroke="url(#g1)" stroke-width="1.7" stroke-linecap="round"/>
+        <line x1="30" y1="21" x2="11" y2="21" stroke="url(#g1)" stroke-width="1.7" stroke-linecap="round"/>
+        <line x1="20" y1="21" x2="32" y2="37" stroke="url(#g1)" stroke-width="1.7" stroke-linecap="round"/>
+        <!-- Extra connector: mid-top -->
+        <line x1="20" y1="7"  x2="20" y2="21" stroke="url(#g1)" stroke-width="1" stroke-linecap="round" opacity=".35"/>
+        <!-- Nodes -->
+        <circle cx="11" cy="7"  r="3"   fill="url(#g1)" filter="url(#glow1)"/>
+        <circle cx="28" cy="7"  r="2.2" fill="url(#g1)"/>
+        <circle cx="30" cy="21" r="2.2" fill="url(#g1)"/>
+        <circle cx="11" cy="21" r="2.2" fill="url(#g1)"/>
+        <circle cx="11" cy="37" r="3"   fill="url(#g1)" filter="url(#glow1)"/>
+        <circle cx="32" cy="37" r="3"   fill="url(#g1)" filter="url(#glow1)"/>
+        <circle cx="20" cy="21" r="2"   fill="url(#g1)"/>
+        <circle cx="20" cy="7"  r="1.5" fill="#63b3ed" opacity=".55"/>
+      </svg>
+
+      <div class="wordmark"><span class="rt">Runtime</span><span class="ai">AI</span></div>
+    </div>
+
+    <div class="opt-name">Network Graph R</div>
+    <div class="opt-desc">Nodes &amp; edges forming the letter R — echoes the existing mark, refined for a horizontal lockup. Cyan-to-blue gradient.</div>
+  </div>
+
+
+  <!-- ── OPTION 2: Shield + Circuit ── -->
+  <div class="logo-card opt-2" onclick="select(2)" id="card-2">
+    <div class="opt-label">
+      Option 02
+      <span class="selected-pill">✓ Selected</span>
+    </div>
+
+    <div class="logo-display">
+      <!-- SVG Icon 2: Angular shield with inner circuit lines + R hint -->
+      <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="g2" x1="4" y1="4" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#63b3ed"/>
+            <stop offset="100%" stop-color="#3b82f6"/>
+          </linearGradient>
+          <linearGradient id="g2b" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#63b3ed" stop-opacity=".9"/>
+            <stop offset="100%" stop-color="#a78bfa" stop-opacity=".7"/>
+          </linearGradient>
+          <filter id="glow2">
+            <feGaussianBlur stdDeviation="1.8" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <!-- Shield outline -->
+        <path d="M22 4 L36 10 L36 23 Q36 34 22 40 Q8 34 8 23 L8 10 Z"
+              stroke="url(#g2)" stroke-width="1.8" fill="none" stroke-linejoin="round"/>
+        <!-- Inner: stylised R in clean strokes -->
+        <line x1="16" y1="14" x2="16" y2="29" stroke="url(#g2b)" stroke-width="1.6" stroke-linecap="round"/>
+        <line x1="16" y1="14" x2="24" y2="14" stroke="url(#g2b)" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M24 14 Q28 14 28 18.5 Q28 23 24 23" stroke="url(#g2b)" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+        <line x1="16" y1="23" x2="24" y2="23" stroke="url(#g2b)" stroke-width="1.6" stroke-linecap="round"/>
+        <line x1="22" y1="23" x2="28" y2="29" stroke="url(#g2b)" stroke-width="1.6" stroke-linecap="round"/>
+        <!-- Corner accent dots -->
+        <circle cx="22" cy="8.5" r="1.5" fill="url(#g2)" opacity=".6" filter="url(#glow2)"/>
+        <circle cx="35" cy="14" r="1"   fill="url(#g2)" opacity=".4"/>
+        <circle cx="9"  cy="14" r="1"   fill="url(#g2)" opacity=".4"/>
+      </svg>
+
+      <div class="wordmark"><span class="rt">Runtime</span><span class="ai">AI</span></div>
+    </div>
+
+    <div class="opt-name">Shield R</div>
+    <div class="opt-desc">A security-forward shield housing a clean R letterform. Leads with protection — ideal if compliance &amp; trust is the primary message.</div>
+  </div>
+
+
+  <!-- ── OPTION 3: Hexagon Runtime ── -->
+  <div class="logo-card opt-3" onclick="select(3)" id="card-3">
+    <div class="opt-label">
+      Option 03
+      <span class="selected-pill">✓ Selected</span>
+    </div>
+
+    <div class="logo-display">
+      <!-- SVG Icon 3: Hexagon with inner play/runtime arrow and orbital dot -->
+      <svg width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="g3" x1="0" y1="0" x2="44" y2="44" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#22d3ee"/>
+            <stop offset="100%" stop-color="#a78bfa"/>
+          </linearGradient>
+          <linearGradient id="g3b" x1="12" y1="12" x2="36" y2="36" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#63b3ed"/>
+            <stop offset="100%" stop-color="#a78bfa"/>
+          </linearGradient>
+          <filter id="glow3">
+            <feGaussianBlur stdDeviation="2" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <!-- Hexagon -->
+        <path d="M22 4 L37.6 13 L37.6 31 L22 40 L6.4 31 L6.4 13 Z"
+              stroke="url(#g3)" stroke-width="1.8" fill="none" stroke-linejoin="round"/>
+        <!-- Inner fill: subtle -->
+        <path d="M22 8 L34 15 L34 29 L22 36 L10 29 L10 15 Z"
+              fill="url(#g3)" opacity=".035"/>
+        <!-- R letterform inside hex, clean geometric -->
+        <line x1="15" y1="15" x2="15" y2="30" stroke="url(#g3b)" stroke-width="1.6" stroke-linecap="round"/>
+        <line x1="15" y1="15" x2="24" y2="15" stroke="url(#g3b)" stroke-width="1.6" stroke-linecap="round"/>
+        <path d="M24 15 Q28.5 15 28.5 19.5 Q28.5 24 24 24"
+              stroke="url(#g3b)" stroke-width="1.6" fill="none" stroke-linecap="round"/>
+        <line x1="15" y1="24" x2="24" y2="24" stroke="url(#g3b)" stroke-width="1.6" stroke-linecap="round"/>
+        <line x1="22" y1="24" x2="29" y2="30" stroke="url(#g3b)" stroke-width="1.6" stroke-linecap="round"/>
+        <!-- Accent: glowing corner vertex -->
+        <circle cx="22" cy="4"    r="2"   fill="url(#g3)" filter="url(#glow3)"/>
+        <circle cx="37.6" cy="13" r="1.4" fill="url(#g3)" opacity=".5"/>
+        <circle cx="37.6" cy="31" r="1.4" fill="url(#g3)" opacity=".5"/>
+        <circle cx="22" cy="40"   r="1.4" fill="url(#g3)" opacity=".5"/>
+        <circle cx="6.4" cy="31"  r="1.4" fill="url(#g3)" opacity=".5"/>
+        <circle cx="6.4" cy="13"  r="1.4" fill="url(#g3)" opacity=".5"/>
+      </svg>
+
+      <div class="wordmark"><span class="rt">Runtime</span><span class="ai">AI</span></div>
+    </div>
+
+    <div class="opt-name">Hexagon R</div>
+    <div class="opt-desc">A hexagonal frame — evoking protection and structure — with an R inside. Cyan-to-purple gradient signals both tech depth and intelligence.</div>
+  </div>
+
+</div><!-- /options -->
+
+<!-- Confirm button -->
+<div class="bottom">
+  <button class="btn-select" id="confirm-btn" onclick="confirm()">
+    Use This Logo →
+  </button>
+  <div class="bottom-hint" id="hint">Click a logo to select it</div>
+</div>
+
+<div class="confirm-banner" id="confirm-banner">
+  ✓ Nice choice! The selected logo SVG code is ready to drop into <code>index.html</code> — just let me know.
+</div>
+
+
+<script>
+let selected = null;
+
+function select(n) {
+  // Remove selected from all
+  document.querySelectorAll('.logo-card').forEach(c => c.classList.remove('selected'));
+  // Add to clicked
+  const card = document.getElementById('card-' + n);
+  card.classList.add('selected');
+  selected = n;
+  // Activate confirm button
+  const btn = document.getElementById('confirm-btn');
+  btn.classList.add('active');
+  document.getElementById('hint').textContent = 'Option ' + ['01','02','03'][n-1] + ' selected';
+  // Hide confirm banner if re-selecting
+  document.getElementById('confirm-banner').classList.remove('show');
+}
+
+function confirm() {
+  if (!selected) return;
+  document.getElementById('confirm-banner').classList.add('show');
+  document.getElementById('confirm-banner').scrollIntoView({behavior:'smooth', block:'nearest'});
+}
+
+// Keyboard support
+document.addEventListener('keydown', e => {
+  if (e.key === '1') select(1);
+  if (e.key === '2') select(2);
+  if (e.key === '3') select(3);
+  if (e.key === 'Enter' && selected) confirm();
+});
+</script>
+
+</body>
+</html>

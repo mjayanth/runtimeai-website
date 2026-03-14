@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>RuntimeAI — Shield Logo · Dark &amp; Light</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;background:#0a0a18;color:#f0f0ff}
+body{display:flex;flex-direction:column;align-items:center;padding:48px 24px 72px;min-height:100vh}
+
+.pg-eyebrow{font-size:.68rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#28284a;margin-bottom:8px;text-align:center}
+.pg-title{font-size:1.05rem;font-weight:700;color:#b0b0d8;margin-bottom:36px;text-align:center;letter-spacing:-.01em}
+
+.panels{display:grid;grid-template-columns:1fr;gap:16px;width:100%;max-width:860px}
+@media(min-width:640px){.panels{grid-template-columns:1fr 1fr}}
+
+.panel{border-radius:18px;padding:36px 32px;position:relative;overflow:hidden}
+.panel.dark{
+  background:#07070f;border:1px solid rgba(255,255,255,.07);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.04);
+  background-image:
+    radial-gradient(ellipse 90% 40% at 50% 0%,rgba(79,70,229,.07) 0%,transparent 60%),
+    linear-gradient(rgba(79,70,229,.014) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(79,70,229,.014) 1px,transparent 1px);
+  background-size:100%,56px 56px,56px 56px;
+}
+.panel.light{
+  background:#f4f5ff;border:1px solid rgba(10,20,80,.09);
+  box-shadow:0 2px 32px rgba(0,0,80,.07),inset 0 1px 0 rgba(255,255,255,.95);
+  background-image:
+    radial-gradient(ellipse 80% 40% at 50% 0%,rgba(79,70,229,.06) 0%,transparent 55%),
+    linear-gradient(rgba(99,102,241,.02) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(99,102,241,.02) 1px,transparent 1px);
+  background-size:100%,56px 56px,56px 56px;
+}
+
+.panel-head{display:flex;align-items:center;gap:8px;margin-bottom:32px;font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.2em}
+.panel.dark  .panel-head{color:#1e1e3a}
+.panel.light .panel-head{color:#9aa0bc}
+.ph-dot{width:6px;height:6px;border-radius:50%}
+.panel.dark  .ph-dot{background:#18183a}
+.panel.light .ph-dot{background:#ccd4ee}
+
+.lockup{display:inline-flex;align-items:center}
+.lockup-wrap{
+  display:inline-flex;padding:10px 14px;border-radius:12px;
+  transition:background .25s,box-shadow .25s;cursor:default;margin-left:-14px;
+}
+.panel.dark  .lockup-wrap:hover{background:rgba(79,70,229,.09);box-shadow:0 0 0 1px rgba(99,102,241,.18)}
+.panel.light .lockup-wrap:hover{background:rgba(79,70,229,.06);box-shadow:0 0 0 1px rgba(79,70,229,.14)}
+
+.ig{position:relative;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.ig-ring{position:absolute;inset:-8px;border-radius:50%;background:radial-gradient(circle,rgba(99,102,241,.28),transparent 65%);opacity:0;transition:opacity .4s;pointer-events:none}
+.panel.dark .lockup-wrap:hover .ig-ring{opacity:1}
+
+.wm{font-family:'Inter',sans-serif;font-weight:800;letter-spacing:-.03em;line-height:1;white-space:nowrap}
+.wm   .rt{color:#f0f0ff}
+.wm   .ai{color:#818cf8}
+.wm-l .rt{color:#0a0e26}
+.wm-l .ai{color:#4f46e5}
+
+.s-nav  .wm,.s-nav  .wm-l{font-size:1.3rem}
+.s-nav  .gap{width:1px;flex-shrink:0}
+.s-med  .wm,.s-med  .wm-l{font-size:1.8rem}
+.s-med  .gap{width:1px;flex-shrink:0}
+.s-hero .wm,.s-hero .wm-l{font-size:2.5rem}
+.s-hero .gap{width:2px;flex-shrink:0}
+
+.row{display:flex;align-items:center;margin-bottom:28px}
+.row:last-of-type{margin-bottom:0}
+.row-tag{font-size:.58rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase;width:36px;flex-shrink:0}
+.panel.dark  .row-tag{color:#1a1a34}
+.panel.light .row-tag{color:#aab4ce}
+
+.nb-wrap{width:100%;max-width:860px;margin-top:20px;border-radius:14px;overflow:hidden}
+.nb-bar{height:58px;display:flex;align-items:center;padding:0 24px;justify-content:space-between}
+.nb-dark{background:rgba(5,5,14,.9);border:1px solid rgba(255,255,255,.07);border-bottom:none;border-radius:14px 14px 0 0}
+.nb-light{background:rgba(252,253,255,.97);border:1px solid rgba(10,20,80,.09);border-top:none;border-radius:0 0 14px 14px;box-shadow:0 4px 20px rgba(0,10,80,.06)}
+.nb-links{display:flex;gap:28px}
+.nb-ld{font-size:.82rem;font-weight:500;color:#32324e}
+.nb-ll{font-size:.82rem;font-weight:500;color:#8898b4}
+.nb-cta{font-size:.8rem;font-weight:700;padding:8px 18px;border-radius:8px;border:none;cursor:pointer;font-family:'Inter',sans-serif;background:#4f46e5;color:#fff}
+
+.action-row{display:flex;align-items:center;gap:14px;margin-top:24px;width:100%;max-width:860px}
+.btn-use{flex:1;padding:13px;border:none;border-radius:10px;cursor:pointer;font-family:'Inter',sans-serif;font-weight:700;font-size:.875rem;color:#fff;background:#4f46e5;transition:all .25s;box-shadow:0 0 24px rgba(99,102,241,.3)}
+.btn-use:hover{transform:translateY(-1px);background:#4338ca;box-shadow:0 4px 32px rgba(99,102,241,.4)}
+.action-note{font-size:.74rem;color:#20203a;line-height:1.6;flex-shrink:0;text-align:right}
+</style>
+</head>
+<body>
+
+<!--
+  SHIELD PATH — angled bottom with small curve
+  ══════════════════════════════════════════════════════════
+  M22 4          → apex
+  L36 11         → top-right shoulder
+  L36 30         → straight right side
+  Q29 38 22 40   → right curve angling to bottom point
+  Q15 38 8 30    → left curve angling back up
+  L8 11 Z        → straight left side, close
+
+  Sides drop to 70% of shield height before the curve begins.
+  Control points (29,38) and (15,38) keep the curves tight
+  and angled — a pointed heraldic tip, not a dome.
+
+  R STROKE  →  3.0  (was 2.2, +36% weight)
+  GAP       →  1px Nav/Med · 2px Hero
+-->
+
+<div class="pg-eyebrow">RuntimeAI · Shield R</div>
+<div class="pg-title">Bold R · Angled Bottom · Solid Indigo · Tight Lockup</div>
+
+<div class="panels">
+
+  <!-- ══════════ DARK ══════════ -->
+  <div class="panel dark">
+    <div class="panel-head"><div class="ph-dot"></div>Dark Mode</div>
+
+    <!-- NAV -->
+    <div class="row s-nav">
+      <span class="row-tag">Nav</span>
+      <div class="lockup-wrap"><div class="lockup">
+        <div class="ig">
+          <div class="ig-ring"></div>
+          <svg width="32" height="32" viewBox="0 0 44 44" fill="none">
+            <defs>
+              <radialGradient id="sh_d1" cx="36%" cy="20%" r="55%"><stop offset="0%" stop-color="#fff" stop-opacity=".2"/><stop offset="100%" stop-color="#fff" stop-opacity="0"/></radialGradient>
+              <linearGradient id="sk_d1" x1="4" y1="4" x2="40" y2="42" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#67e8f9"/><stop offset="50%" stop-color="#818cf8"/><stop offset="100%" stop-color="#c4b5fd"/></linearGradient>
+              <filter id="gd1" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="1.8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            </defs>
+            <path d="M22 4 L36 11 L36 30 Q29 38 22 40 Q15 38 8 30 L8 11 Z" fill="#4f46e5"/>
+            <path d="M22 4 L36 11 L36 30 Q29 38 22 40 Q15 38 8 30 L8 11 Z" fill="url(#sh_d1)"/>
+            <path d="M22 4 L36 11 L36 30 Q29 38 22 40 Q15 38 8 30 L8 11 Z" stroke="url(#sk_d1)" stroke-width="2.8" fill="none" stroke-linejoin="round"/>
+            <line   x1="15.5" y1="13.5" x2="15.5" y2="30.5" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+            <path   d="M15.5 13.5 L23 13.5 Q30 13.5 30 19.5 Q30 25.5 23 25.5 L15.5 25.5" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <line   x1="22"   y1="25.5" x2="29.5" y2="30.5" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="22" cy="4.5" r="2.4" fill="#fff" opacity=".9" filter="url(#gd1)"/>
+          </svg>
+        </div>
+        <div class="gap"></div>
+        <span class="wm"><span class="rt">Runtime</span><span class="ai">AI</span></span>
+      </div></div>
+    </div>
+
+    <!-- MED -->
+    <div class="row s-med">
+      <span class="row-tag">Med</span>
+      <div class="lockup-wrap"><div class="lockup">
+        <div class="ig">
+          <div class="ig-ring"></div>
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+            <defs>
+              <radialGradient id="sh_d2" cx="36%" cy="20%" r="55%"><stop offset="0%" stop-color="#fff" stop-opacity=".2"/><stop offset="100%" stop-color="#fff" stop-opacity="0"/></radialGradient>
+              <linearGradient id="sk_d2" x1="4" y1="4" x2="40" y2="42" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#67e8f9"/><stop offset="50%" stop-color="#818cf8"/><stop offset="100%" stop-color="#c4b5fd"/></linearGradient>
+              <filter id="gd2" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="1.8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            </defs>
+            <path d="M22 4 L36 11 L36 30 Q29 38 22 40 Q15 38 8 30 L8 11 Z" fill="#4f46e5"/>
+            <path d="M22 4 L36 11 L36 30 Q29 38 22 40 Q15 38 8 30 L8 11 Z" fill="url(#sh_d2)"/>
+            <path d="M22 4 L36 11 L36 30 Q29 38 22 40 Q15 38 8 30 L8 11 Z" stroke="url(#sk_d2)" stroke-width="2.8" fill="none" stroke-linejoin="round"/>
+            <line   x1="15.5" y1="13.5" x2="15.5" y2="30.5" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+            <path   d="M15.5 13.5 L23 13.5 Q30 13.5 30 19.5 Q30 25.5 23 25.5 L15.5 25.5" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <line   x1="22"   y1="25.5" x2="29.5" y2="30.5" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="22" cy="4.5" r="2.4" fill="#fff" opacity=".9" filter="url(#gd2)"/>
+          </svg>
+        </div>
+        <div class="gap"></div>
+        <span class="wm"><span class="rt">Runtime</span><span class="ai">AI</span></span>
+      </div></div>
+    </div>
+
+    <!-- HERO -->
+    <div class="row s-hero">
+      <span class="row-tag">Hero</span>
+      <div class="lockup-wrap"><div class="lockup">
+        <div class="ig">
+          <div class="ig-ring" style="inset:-12px"></div>
+          <svg width="62" height="62" viewBox="0 0 44 44" fill="none">
+            <defs>
+              <radialGradient id="sh_d3" cx="36%" cy="20%" r="55%"><stop offset="0%" stop-color="#fff" stop-opacity=".22"/><stop offset="100%" stop-color="#fff" stop-opacity="0"/></radialGradient>
+              <linearGradient id="sk_d3" x1="4" y1="4" x2="40" y2="42" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#67e8f9"/><stop offset="50%" stop-color="#818cf8"/><stop offset="100%" stop-color="#c4b5fd"/></linearGradient>
+              <filter id="gd3" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="2.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+              <filter id="og3" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="3.5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+            </defs>
+            <path d="M22 4 L36 11 L36 30 Q29 38 22 40 Q15 38 8 30 L8 11 Z" fill="#4f46e5" filter="url(#og3)" opacity=".4"/>
+            <path d="M22 4 L36 11 L36 30 Q29 38 22 40 Q15 38 8 30 L8 11 Z" fill="#4f46e5"/>
+            <path d="M22 4 L36 11 L36 30 Q29 38 22 40 Q15 38 8 30 L8 11 Z" fill="url(#sh_d3)"/>
+            <path d="M22 4 L36 11 L36 30 Q29 38 22 40 Q15 38 8 30 L8 11 Z" stroke="url(#sk_d3)" stroke-width="2.8" fill="none" stroke-linejoin="round"/>
+            <line   x1="15.5" y1="13.5" x2="15.5" y2="30.5" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+            <path   d="M15.5 13.5 L23 13.5 Q30 13.5 30 19.5 Q30 25.5 23 25.5 L15.5 25.5" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <line   x1="22"   y1="25.5" x2="29.5" y2="30.5" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="22" cy="4.5" r="2.6" fill="#fff" opacity=".95" filter="url(#gd3)"/>
+          </svg>
+        </div>
+        <div class="gap"></div>
+        <span class="wm"><span class="rt">Runtime</span><span class="ai">AI</span></span>
+      </div></div>
+    </div>
+  </div>
+
+
+  <!-- ══════════ LIGHT ══════════ -->
+  <div class="panel light">
+    <div class="panel-head"><div class="ph-dot"></div>Light Mode</div>
+
+    <!-- NAV -->
+    <div class="row s-nav">
+      <span class="row-tag">Nav</span>
+      <div class="lockup-wrap"><div class="lockup">
+        <div class="ig">
+          <svg width="32" height="32" viewBox="0 0 44 44" fill="none">
+            <defs>
+              <radialGradient id="sh_l1" cx="36%" cy="20%" r="55%"><stop offset="0%" stop-color="#fff" stop-opacity=".26"/><stop offset="100%" stop-color="#fff" stop-opacity="0"/></radialGradient>
+              <linearGradient id="sk_l1" x1="4" y1="4" x2="40" y2="42" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#38bdf8"/><stop offset="50%" stop-color="#6366f1"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
+              <filter id="dl1" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="0" dy="2" stdDeviation="3.5" flood-color="#4f46e5" flood-opacity=".28"/></filter>
+            </defs>
+            <path d="M22 4 L36 11 L36 30 Q29 38 22 40 Q15 38 8 30 L8 11 Z" fill="#4f46e5" filter="url(#dl1)"/>
+            <path d="M22 4 L36 11 L36 30 Q29 38 22 40 Q15 38 8 30 L8 11 Z" fill="url(#sh_l1)"/>
+            <path d="M22 4 L36 11 L36 30 Q29 38 22 40 Q15 38 8 30 L8 11 Z" stroke="url(#sk_l1)" stroke-width="2.8" fill="none" stroke-linejoin="round"/>
+            <line   x1="15.5" y1="13.5" x2="15.5" y2="30.5" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+            <path   d="M15.5 13.5 L23 13.5 Q30 13.5 30 19.5 Q30 25.5 23 25.5 L15.5 25.5" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <line   x1="22"   y1="25.5" x2="29.5" y2="30.5" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="22" cy="4.5" r="2.2" fill="#fff" opacity=".95"/>
+          </svg>
+        </div>
+        <div class="gap"></div>
+        <span class="wm wm-l"><span class="rt">Runtime</span><span class="ai">AI</span></span>
+      </div></div>
+    </div>
+
+    <!-- MED -->
+    <div class="row s-med">
+      <span class="row-tag">Med</span>
+      <div class="lockup-wrap"><div class="lockup">
+        <div class="ig">
+          <svg width="44" height="44" viewBox="0 0 44 44" fill="none">
+            <defs>
+              <radialGradient id="sh_l2" cx="36%" cy="20%" r="55%"><stop offset="0%" stop-color="#fff" stop-opacity=".26"/><stop offset="100%" stop-color="#fff" stop-opacity="0"/></radialGradient>
+              <linearGradient id="sk_l2" x1="4" y1="4" x2="40" y2="42" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#38bdf8"/><stop offset="50%" stop-color="#6366f1"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
+              <filter id="dl2" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="0" dy="2" stdDeviation="4" flood-color="#4f46e5" flood-opacity=".28"/></filter>
+            </defs>
+            <path d="M22 4 L36 11 L36 30 Q29 38 22 40 Q15 38 8 30 L8 11 Z" fill="#4f46e5" filter="url(#dl2)"/>
+            <path d="M22 4 L36 11 L36 30 Q29 38 22 40 Q15 38 8 30 L8 11 Z" fill="url(#sh_l2)"/>
+            <path d="M22 4 L36 11 L36 30 Q29 38 22 40 Q15 38 8 30 L8 11 Z" stroke="url(#sk_l2)" stroke-width="2.8" fill="none" stroke-linejoin="round"/>
+            <line   x1="15.5" y1="13.5" x2="15.5" y2="30.5" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+            <path   d="M15.5 13.5 L23 13.5 Q30 13.5 30 19.5 Q30 25.5 23 25.5 L15.5 25.5" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <line   x1="22"   y1="25.5" x2="29.5" y2="30.5" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="22" cy="4.5" r="2.2" fill="#fff" opacity=".95"/>
+          </svg>
+        </div>
+        <div class="gap"></div>
+        <span class="wm wm-l"><span class="rt">Runtime</span><span class="ai">AI</span></span>
+      </div></div>
+    </div>
+
+    <!-- HERO -->
+    <div class="row s-hero">
+      <span class="row-tag">Hero</span>
+      <div class="lockup-wrap"><div class="lockup">
+        <div class="ig">
+          <svg width="62" height="62" viewBox="0 0 44 44" fill="none">
+            <defs>
+              <radialGradient id="sh_l3" cx="36%" cy="20%" r="55%"><stop offset="0%" stop-color="#fff" stop-opacity=".26"/><stop offset="100%" stop-color="#fff" stop-opacity="0"/></radialGradient>
+              <linearGradient id="sk_l3" x1="4" y1="4" x2="40" y2="42" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#38bdf8"/><stop offset="50%" stop-color="#6366f1"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
+              <filter id="dl3" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="0" dy="3" stdDeviation="5" flood-color="#4f46e5" flood-opacity=".3"/></filter>
+            </defs>
+            <path d="M22 4 L36 11 L36 30 Q29 38 22 40 Q15 38 8 30 L8 11 Z" fill="#4f46e5" filter="url(#dl3)"/>
+            <path d="M22 4 L36 11 L36 30 Q29 38 22 40 Q15 38 8 30 L8 11 Z" fill="url(#sh_l3)"/>
+            <path d="M22 4 L36 11 L36 30 Q29 38 22 40 Q15 38 8 30 L8 11 Z" stroke="url(#sk_l3)" stroke-width="2.8" fill="none" stroke-linejoin="round"/>
+            <line   x1="15.5" y1="13.5" x2="15.5" y2="30.5" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+            <path   d="M15.5 13.5 L23 13.5 Q30 13.5 30 19.5 Q30 25.5 23 25.5 L15.5 25.5" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            <line   x1="22"   y1="25.5" x2="29.5" y2="30.5" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+            <circle cx="22" cy="4.5" r="2.5" fill="#fff" opacity=".95"/>
+          </svg>
+        </div>
+        <div class="gap"></div>
+        <span class="wm wm-l"><span class="rt">Runtime</span><span class="ai">AI</span></span>
+      </div></div>
+    </div>
+  </div>
+
+</div><!-- /panels -->
+
+
+<!-- Navbar context -->
+<div style="width:100%;max-width:860px;margin-top:20px">
+  <div style="font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.2em;color:#18183a;text-align:center;margin-bottom:10px">Navbar context</div>
+  <div class="nb-wrap">
+    <div class="nb-bar nb-dark">
+      <div style="display:inline-flex;align-items:center;gap:1px">
+        <svg width="32" height="32" viewBox="0 0 44 44" fill="none">
+          <defs>
+            <radialGradient id="nb_sh_d"><stop offset="0%" stop-color="#fff" stop-opacity=".2"/><stop offset="100%" stop-color="#fff" stop-opacity="0"/></radialGradient>
+            <linearGradient id="nb_sk_d" x1="4" y1="4" x2="40" y2="42" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#67e8f9"/><stop offset="50%" stop-color="#818cf8"/><stop offset="100%" stop-color="#c4b5fd"/></linearGradient>
+            <filter id="nb_gd"><feGaussianBlur stdDeviation="1.8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+          </defs>
+          <path d="M22 4 L36 11 L36 30 Q29 38 22 40 Q15 38 8 30 L8 11 Z" fill="#4f46e5"/>
+          <path d="M22 4 L36 11 L36 30 Q29 38 22 40 Q15 38 8 30 L8 11 Z" fill="url(#nb_sh_d)"/>
+          <path d="M22 4 L36 11 L36 30 Q29 38 22 40 Q15 38 8 30 L8 11 Z" stroke="url(#nb_sk_d)" stroke-width="2.8" fill="none" stroke-linejoin="round"/>
+          <line x1="15.5" y1="13.5" x2="15.5" y2="30.5" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+          <path d="M15.5 13.5 L23 13.5 Q30 13.5 30 19.5 Q30 25.5 23 25.5 L15.5 25.5" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <line x1="22" y1="25.5" x2="29.5" y2="30.5" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="22" cy="4.5" r="2.4" fill="#fff" opacity=".9" filter="url(#nb_gd)"/>
+        </svg>
+        <span style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:-.03em;line-height:1;color:#f0f0ff">Runtime<span style="color:#818cf8">AI</span></span>
+      </div>
+      <div class="nb-links"><span class="nb-ld">Why RuntimeAI</span><span class="nb-ld">Products</span><span class="nb-ld">Trust</span></div>
+      <button class="nb-cta">Request a Demo →</button>
+    </div>
+    <div class="nb-bar nb-light">
+      <div style="display:inline-flex;align-items:center;gap:1px">
+        <svg width="32" height="32" viewBox="0 0 44 44" fill="none">
+          <defs>
+            <radialGradient id="nb_sh_l"><stop offset="0%" stop-color="#fff" stop-opacity=".26"/><stop offset="100%" stop-color="#fff" stop-opacity="0"/></radialGradient>
+            <linearGradient id="nb_sk_l" x1="4" y1="4" x2="40" y2="42" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#38bdf8"/><stop offset="50%" stop-color="#6366f1"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
+            <filter id="nb_dl" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="0" dy="2" stdDeviation="3.5" flood-color="#4f46e5" flood-opacity=".26"/></filter>
+          </defs>
+          <path d="M22 4 L36 11 L36 30 Q29 38 22 40 Q15 38 8 30 L8 11 Z" fill="#4f46e5" filter="url(#nb_dl)"/>
+          <path d="M22 4 L36 11 L36 30 Q29 38 22 40 Q15 38 8 30 L8 11 Z" fill="url(#nb_sh_l)"/>
+          <path d="M22 4 L36 11 L36 30 Q29 38 22 40 Q15 38 8 30 L8 11 Z" stroke="url(#nb_sk_l)" stroke-width="2.8" fill="none" stroke-linejoin="round"/>
+          <line x1="15.5" y1="13.5" x2="15.5" y2="30.5" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+          <path d="M15.5 13.5 L23 13.5 Q30 13.5 30 19.5 Q30 25.5 23 25.5 L15.5 25.5" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+          <line x1="22" y1="25.5" x2="29.5" y2="30.5" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="22" cy="4.5" r="2.2" fill="#fff" opacity=".95"/>
+        </svg>
+        <span style="font-family:'Inter',sans-serif;font-weight:800;font-size:1.3rem;letter-spacing:-.03em;line-height:1;color:#0a0e26">Runtime<span style="color:#4f46e5">AI</span></span>
+      </div>
+      <div class="nb-links"><span class="nb-ll">Why RuntimeAI</span><span class="nb-ll">Products</span><span class="nb-ll">Trust</span></div>
+      <button class="nb-cta">Request a Demo →</button>
+    </div>
+  </div>
+</div>
+
+<div class="action-row">
+  <button class="btn-use" onclick="this.textContent='✓ Ready — say the word and I\'ll update index.html'">Use this logo in index.html →</button>
+  <div class="action-note">Dark &amp; light SVGs ready.<br/>Icon + wordmark assets below.</div>
+</div>
+
+</body>
+</html>

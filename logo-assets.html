@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>RuntimeAI — Logo Assets</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;background:#0a0a18;color:#f0f0ff;padding:48px 24px 72px;display:flex;flex-direction:column;align-items:center;min-height:100vh}
+
+h1{font-size:.68rem;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:#28284a;margin-bottom:40px;text-align:center}
+
+.grid{display:grid;grid-template-columns:1fr;gap:16px;width:100%;max-width:860px}
+@media(min-width:600px){.grid{grid-template-columns:repeat(3,1fr)}}
+
+/* ── Asset cards ── */
+.card{border-radius:16px;overflow:hidden}
+.card-dark{border:1px solid rgba(255,255,255,.07);background:#07070f}
+.card-light{border:1px solid rgba(10,20,80,.09);background:#f4f5ff}
+
+.card-label{padding:14px 18px;font-size:.6rem;font-weight:700;text-transform:uppercase;letter-spacing:.18em}
+.card-dark  .card-label{color:#1e1e3c;border-bottom:1px solid rgba(255,255,255,.05)}
+.card-light .card-label{color:#9aabcc;border-bottom:1px solid rgba(10,20,80,.07)}
+
+.card-body{padding:28px 20px;display:flex;align-items:center;justify-content:center;min-height:100px}
+
+/* Wordmark text */
+.wm{font-family:'Inter',sans-serif;font-weight:800;letter-spacing:-.03em;line-height:1;white-space:nowrap;font-size:1.75rem}
+.wm-d .rt{color:#f0f0ff}.wm-d .ai{color:#818cf8}
+.wm-l .rt{color:#0a0e26}.wm-l .ai{color:#4f46e5}
+
+/* ── Divider ── */
+.section-title{font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:#20203a;margin:36px 0 14px;width:100%;max-width:860px;text-align:center}
+
+/* ── Full lockup row ── */
+.lockup-row{display:flex;flex-direction:column;gap:12px;width:100%;max-width:860px}
+.lockup-band{border-radius:14px;padding:20px 28px;display:flex;align-items:center}
+.lockup-band.dark-band{background:#07070f;border:1px solid rgba(255,255,255,.07)}
+.lockup-band.light-band{background:#f4f5ff;border:1px solid rgba(10,20,80,.09)}
+.lockup{display:inline-flex;align-items:center;gap:1px}
+</style>
+</head>
+<body>
+
+<h1>RuntimeAI · Logo Asset Kit</h1>
+
+<!-- ══ ICON ONLY ══ -->
+<div class="section-title">Icon only</div>
+<div class="grid">
+
+  <div class="card card-dark">
+    <div class="card-label">Icon — Dark</div>
+    <div class="card-body">
+      <!-- 80px display size -->
+      <svg width="80" height="80" viewBox="0 0 44 44" fill="none">
+        <defs>
+          <radialGradient id="i_sh_d" cx="36%" cy="20%" r="55%"><stop offset="0%" stop-color="#fff" stop-opacity=".2"/><stop offset="100%" stop-color="#fff" stop-opacity="0"/></radialGradient>
+          <linearGradient id="i_sk_d" x1="4" y1="4" x2="40" y2="42" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#67e8f9"/><stop offset="50%" stop-color="#818cf8"/><stop offset="100%" stop-color="#c4b5fd"/></linearGradient>
+          <filter id="i_gd" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="1.8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+        <path d="M22 4 L36 11 L36 30 Q29 38 22 40 Q15 38 8 30 L8 11 Z" fill="#4f46e5"/>
+        <path d="M22 4 L36 11 L36 30 Q29 38 22 40 Q15 38 8 30 L8 11 Z" fill="url(#i_sh_d)"/>
+        <path d="M22 4 L36 11 L36 30 Q29 38 22 40 Q15 38 8 30 L8 11 Z" stroke="url(#i_sk_d)" stroke-width="2.8" fill="none" stroke-linejoin="round"/>
+        <line x1="15.5" y1="13.5" x2="15.5" y2="30.5" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+        <path d="M15.5 13.5 L23 13.5 Q30 13.5 30 19.5 Q30 25.5 23 25.5 L15.5 25.5" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="22" y1="25.5" x2="29.5" y2="30.5" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="22" cy="4.5" r="2.5" fill="#fff" opacity=".92" filter="url(#i_gd)"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="card card-light">
+    <div class="card-label">Icon — Light</div>
+    <div class="card-body">
+      <svg width="80" height="80" viewBox="0 0 44 44" fill="none">
+        <defs>
+          <radialGradient id="i_sh_l" cx="36%" cy="20%" r="55%"><stop offset="0%" stop-color="#fff" stop-opacity=".26"/><stop offset="100%" stop-color="#fff" stop-opacity="0"/></radialGradient>
+          <linearGradient id="i_sk_l" x1="4" y1="4" x2="40" y2="42" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#38bdf8"/><stop offset="50%" stop-color="#6366f1"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
+          <filter id="i_dl" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="0" dy="2" stdDeviation="3.5" flood-color="#4f46e5" flood-opacity=".28"/></filter>
+        </defs>
+        <path d="M22 4 L36 11 L36 30 Q29 38 22 40 Q15 38 8 30 L8 11 Z" fill="#4f46e5" filter="url(#i_dl)"/>
+        <path d="M22 4 L36 11 L36 30 Q29 38 22 40 Q15 38 8 30 L8 11 Z" fill="url(#i_sh_l)"/>
+        <path d="M22 4 L36 11 L36 30 Q29 38 22 40 Q15 38 8 30 L8 11 Z" stroke="url(#i_sk_l)" stroke-width="2.8" fill="none" stroke-linejoin="round"/>
+        <line x1="15.5" y1="13.5" x2="15.5" y2="30.5" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+        <path d="M15.5 13.5 L23 13.5 Q30 13.5 30 19.5 Q30 25.5 23 25.5 L15.5 25.5" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="22" y1="25.5" x2="29.5" y2="30.5" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="22" cy="4.5" r="2.2" fill="#fff" opacity=".95"/>
+      </svg>
+    </div>
+  </div>
+
+  <!-- icon at small sizes -->
+  <div class="card card-dark" style="grid-row:span 1">
+    <div class="card-label">Icon — Sizes</div>
+    <div class="card-body" style="gap:20px;flex-wrap:wrap">
+      <!-- 16px -->
+      <svg width="16" height="16" viewBox="0 0 44 44" fill="none">
+        <path d="M22 4 L36 11 L36 30 Q29 38 22 40 Q15 38 8 30 L8 11 Z" fill="#4f46e5"/>
+        <line x1="15.5" y1="13.5" x2="15.5" y2="30.5" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+        <path d="M15.5 13.5 L23 13.5 Q30 13.5 30 19.5 Q30 25.5 23 25.5 L15.5 25.5" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="22" y1="25.5" x2="29.5" y2="30.5" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      <!-- 24px -->
+      <svg width="24" height="24" viewBox="0 0 44 44" fill="none">
+        <path d="M22 4 L36 11 L36 30 Q29 38 22 40 Q15 38 8 30 L8 11 Z" fill="#4f46e5"/>
+        <line x1="15.5" y1="13.5" x2="15.5" y2="30.5" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+        <path d="M15.5 13.5 L23 13.5 Q30 13.5 30 19.5 Q30 25.5 23 25.5 L15.5 25.5" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="22" y1="25.5" x2="29.5" y2="30.5" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      <!-- 40px -->
+      <svg width="40" height="40" viewBox="0 0 44 44" fill="none">
+        <defs>
+          <radialGradient id="sz_sh" cx="36%" cy="20%" r="55%"><stop offset="0%" stop-color="#fff" stop-opacity=".2"/><stop offset="100%" stop-color="#fff" stop-opacity="0"/></radialGradient>
+          <linearGradient id="sz_sk" x1="4" y1="4" x2="40" y2="42" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#67e8f9"/><stop offset="50%" stop-color="#818cf8"/><stop offset="100%" stop-color="#c4b5fd"/></linearGradient>
+        </defs>
+        <path d="M22 4 L36 11 L36 30 Q29 38 22 40 Q15 38 8 30 L8 11 Z" fill="#4f46e5"/>
+        <path d="M22 4 L36 11 L36 30 Q29 38 22 40 Q15 38 8 30 L8 11 Z" fill="url(#sz_sh)"/>
+        <path d="M22 4 L36 11 L36 30 Q29 38 22 40 Q15 38 8 30 L8 11 Z" stroke="url(#sz_sk)" stroke-width="2.8" fill="none" stroke-linejoin="round"/>
+        <line x1="15.5" y1="13.5" x2="15.5" y2="30.5" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+        <path d="M15.5 13.5 L23 13.5 Q30 13.5 30 19.5 Q30 25.5 23 25.5 L15.5 25.5" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="22" y1="25.5" x2="29.5" y2="30.5" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      <!-- 64px -->
+      <svg width="64" height="64" viewBox="0 0 44 44" fill="none">
+        <defs>
+          <radialGradient id="sz_sh2" cx="36%" cy="20%" r="55%"><stop offset="0%" stop-color="#fff" stop-opacity=".2"/><stop offset="100%" stop-color="#fff" stop-opacity="0"/></radialGradient>
+          <linearGradient id="sz_sk2" x1="4" y1="4" x2="40" y2="42" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#67e8f9"/><stop offset="50%" stop-color="#818cf8"/><stop offset="100%" stop-color="#c4b5fd"/></linearGradient>
+        </defs>
+        <path d="M22 4 L36 11 L36 30 Q29 38 22 40 Q15 38 8 30 L8 11 Z" fill="#4f46e5"/>
+        <path d="M22 4 L36 11 L36 30 Q29 38 22 40 Q15 38 8 30 L8 11 Z" fill="url(#sz_sh2)"/>
+        <path d="M22 4 L36 11 L36 30 Q29 38 22 40 Q15 38 8 30 L8 11 Z" stroke="url(#sz_sk2)" stroke-width="2.8" fill="none" stroke-linejoin="round"/>
+        <line x1="15.5" y1="13.5" x2="15.5" y2="30.5" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+        <path d="M15.5 13.5 L23 13.5 Q30 13.5 30 19.5 Q30 25.5 23 25.5 L15.5 25.5" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="22" y1="25.5" x2="29.5" y2="30.5" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+    </div>
+  </div>
+
+</div><!-- /icon grid -->
+
+
+<!-- ══ WORDMARK ONLY ══ -->
+<div class="section-title">Wordmark only</div>
+<div class="grid" style="grid-template-columns:1fr 1fr">
+
+  <div class="card card-dark">
+    <div class="card-label">Wordmark — Dark</div>
+    <div class="card-body">
+      <span class="wm wm-d"><span class="rt">Runtime</span><span class="ai">AI</span></span>
+    </div>
+  </div>
+
+  <div class="card card-light">
+    <div class="card-label">Wordmark — Light</div>
+    <div class="card-body">
+      <span class="wm wm-l"><span class="rt">Runtime</span><span class="ai">AI</span></span>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- ══ FULL LOCKUP ══ -->
+<div class="section-title">Full lockup</div>
+<div class="lockup-row">
+  <div class="lockup-band dark-band">
+    <div class="lockup">
+      <svg width="32" height="32" viewBox="0 0 44 44" fill="none">
+        <defs>
+          <radialGradient id="lk_sh_d" cx="36%" cy="20%" r="55%"><stop offset="0%" stop-color="#fff" stop-opacity=".2"/><stop offset="100%" stop-color="#fff" stop-opacity="0"/></radialGradient>
+          <linearGradient id="lk_sk_d" x1="4" y1="4" x2="40" y2="42" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#67e8f9"/><stop offset="50%" stop-color="#818cf8"/><stop offset="100%" stop-color="#c4b5fd"/></linearGradient>
+          <filter id="lk_gd"><feGaussianBlur stdDeviation="1.8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+        </defs>
+        <path d="M22 4 L36 11 L36 30 Q29 38 22 40 Q15 38 8 30 L8 11 Z" fill="#4f46e5"/>
+        <path d="M22 4 L36 11 L36 30 Q29 38 22 40 Q15 38 8 30 L8 11 Z" fill="url(#lk_sh_d)"/>
+        <path d="M22 4 L36 11 L36 30 Q29 38 22 40 Q15 38 8 30 L8 11 Z" stroke="url(#lk_sk_d)" stroke-width="2.8" fill="none" stroke-linejoin="round"/>
+        <line x1="15.5" y1="13.5" x2="15.5" y2="30.5" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+        <path d="M15.5 13.5 L23 13.5 Q30 13.5 30 19.5 Q30 25.5 23 25.5 L15.5 25.5" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="22" y1="25.5" x2="29.5" y2="30.5" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="22" cy="4.5" r="2.4" fill="#fff" opacity=".92" filter="url(#lk_gd)"/>
+      </svg>
+      <span class="wm wm-d" style="font-size:1.3rem"><span class="rt">Runtime</span><span class="ai">AI</span></span>
+    </div>
+  </div>
+  <div class="lockup-band light-band">
+    <div class="lockup">
+      <svg width="32" height="32" viewBox="0 0 44 44" fill="none">
+        <defs>
+          <radialGradient id="lk_sh_l" cx="36%" cy="20%" r="55%"><stop offset="0%" stop-color="#fff" stop-opacity=".26"/><stop offset="100%" stop-color="#fff" stop-opacity="0"/></radialGradient>
+          <linearGradient id="lk_sk_l" x1="4" y1="4" x2="40" y2="42" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#38bdf8"/><stop offset="50%" stop-color="#6366f1"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient>
+          <filter id="lk_dl" x="-25%" y="-25%" width="150%" height="150%"><feDropShadow dx="0" dy="2" stdDeviation="3.5" flood-color="#4f46e5" flood-opacity=".26"/></filter>
+        </defs>
+        <path d="M22 4 L36 11 L36 30 Q29 38 22 40 Q15 38 8 30 L8 11 Z" fill="#4f46e5" filter="url(#lk_dl)"/>
+        <path d="M22 4 L36 11 L36 30 Q29 38 22 40 Q15 38 8 30 L8 11 Z" fill="url(#lk_sh_l)"/>
+        <path d="M22 4 L36 11 L36 30 Q29 38 22 40 Q15 38 8 30 L8 11 Z" stroke="url(#lk_sk_l)" stroke-width="2.8" fill="none" stroke-linejoin="round"/>
+        <line x1="15.5" y1="13.5" x2="15.5" y2="30.5" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+        <path d="M15.5 13.5 L23 13.5 Q30 13.5 30 19.5 Q30 25.5 23 25.5 L15.5 25.5" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="22" y1="25.5" x2="29.5" y2="30.5" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+        <circle cx="22" cy="4.5" r="2.2" fill="#fff" opacity=".95"/>
+      </svg>
+      <span class="wm wm-l" style="font-size:1.3rem"><span class="rt">Runtime</span><span class="ai">AI</span></span>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

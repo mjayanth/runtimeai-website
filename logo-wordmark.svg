@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 48" width="260" height="48" role="img" aria-label="RuntimeAI wordmark">
+  <title>RuntimeAI</title>
+  <!--
+    RuntimeAI wordmark — Inter 800, letter-spacing -0.03em
+    Two variants stacked vertically with a guide line:
+      Dark  (top):  "Runtime" #f0f0ff  "AI" #818cf8
+      Light (btm):  "Runtime" #0a0e26  "AI" #4f46e5
+
+    Requires Inter font — include in page:
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@800&display=swap" rel="stylesheet"/>
+
+    To use as a standalone SVG asset, embed the font or convert text to paths.
+    At intended display size the SVG is 260×48 (dark) or 260×48 (light).
+    Scale freely — all units are relative.
+  -->
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@800&amp;display=swap');
+      .wm { font-family: 'Inter', system-ui, sans-serif; font-weight: 800; font-size: 40px; letter-spacing: -0.03em; }
+    </style>
+  </defs>
+
+  <!-- ── Dark variant (use on dark backgrounds) ── -->
+  <g transform="translate(0, 0)">
+    <text class="wm" y="38" fill="#f0f0ff">Runtime</text>
+    <!-- "AI" starts after "Runtime" — approximate x offset at 40px Inter 800 -->
+    <text class="wm" x="199" y="38" fill="#818cf8">AI</text>
+  </g>
+
+  <!--
+    Light variant: rendered below for reference.
+    In production, use only one group at a time.
+    Toggle by duplicating this SVG and adjusting fill values.
+
+    "Runtime" → #0a0e26
+    "AI"       → #4f46e5
+  -->
+</svg>
